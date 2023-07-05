@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <title>
+Counter Page
 </title>
 <meta charset="UFT-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
@@ -9,12 +10,30 @@
 <style>
 </style>
 <body>
-<div id="TestDisplay">
+<div id="Today-Date">
 </div>
+<div id="Date-Array"></div>
 </body>
 <script>
-let text = new String;
-text = "hello" + "<br>" + "world";
-document.getElementById("TestDisplay").innerHTML = text;
+const minute = 1000 * 60;
+const hour = minute * 60;
+const day = hour * 24;
+const year = day * 365;
+const today = new Date();
+
+let dateArray = [];
+let dateNumberArray = [];
+
+dateArray.push("July 4, 2023");
+for(let i=0;i<dateArray.length;i++){
+    let a = Date.parse(dateArray[i]);
+    let years = Math.round(a/year);
+    dateNumberArray.push(years);
+}
+let c = Date.parse(dateArray[0]);
+let b = today - c;
+let diff = Math.floor(b/day);
+document.getElementById("Today-Date").innerHTML = diff;
+document.getElementById("Date-Array").innerHTML = dateNumberArray;
 </script>
 </html>
