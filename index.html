@@ -10,9 +10,16 @@ Counter Page
 <style>
 </style>
 <body>
-<div id="Today-Date">
-</div>
-<div id="Date-Array"></div>
+<h2>Day Counter Page</h2>
+<br>
+<p>Days from beginning of year:</p>
+<div id="Today-Date"></div>
+<br>
+<p>Average days between dates:</p>
+<div id="Average"></div>
+<br>
+<p>Days from last date:</p>
+<div id="Curr-Length"></div>
 </body>
 <script>
     /*
@@ -29,17 +36,39 @@ const today = new Date();
 
 let dateArray = [];
 let dateNumberArray = [];
+let finaldateArray = [];
 
-dateArray.push("July 4, 2023");
+dateArray.push("January 1, 2023");
+dateArray.push("February 17, 2023");
+dateArray.push("May 17, 2023");
+dateArray.push("June 12, 2023");
+dateArray.push("Jun 30, 2023");
 for(let i=0;i<dateArray.length;i++){
-    let a = Date.parse(dateArray[i]);
-    let years = Math.round(a/year);
-    dateNumberArray.push(years);
+    let a = Date.parse(dateArray[i]);    
+    //let years = Math.round(a/year);
+    dateNumberArray.push(a);
 }
-let c = Date.parse(dateArray[0]);
-let b = today - c;
+for(let i=1;i<dateArray.length;i++){
+    let before = i-1;
+    let a = dateNumberArray[i]-dateNumberArray[before];    
+    let days = Math.round(a/day);
+    finaldateArray.push(days);
+}
+let total = 0;
+for(let i=0;i<finaldateArray.length;i++){
+    total += finaldateArray[i];
+}
+let average = total / finaldateArray.length;
+let c = dateNumberArray[0];
+let finalNumberPos = dateNumberArray.length - 1;
+let finalNumber = dateNumberArray[finalNumberPos];
+let todayParsed = Date.parse(today);
+let b =  todayParsed - c;
 let diff = Math.floor(b/day);
+let newLength = Math.floor((todayParsed - finalNumber)/day);
 document.getElementById("Today-Date").innerHTML = diff;
-document.getElementById("Date-Array").innerHTML = dateNumberArray;
+document.getElementById("Curr-Length").innerHTML = newLength;
+document.getElementById("Average").innerHTML = average;
+console.log(today,finaldateArray,finalNumber);
 </script>
 </html>
