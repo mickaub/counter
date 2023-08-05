@@ -27,6 +27,7 @@ Counter Page
     17 May
     12 June
     30 Jun
+    4 Aug
     */
 const minute = 1000 * 60;
 const hour = minute * 60;
@@ -43,6 +44,7 @@ dateArray.push("February 17, 2023");
 dateArray.push("May 17, 2023");
 dateArray.push("June 12, 2023");
 dateArray.push("Jun 30, 2023");
+dateArray.push("August 4, 2023");
 for(let i=0;i<dateArray.length;i++){
     let a = Date.parse(dateArray[i]);    
     //let years = Math.round(a/year);
@@ -69,6 +71,6 @@ let newLength = Math.floor((todayParsed - finalNumber)/day);
 document.getElementById("Today-Date").innerHTML = diff;
 document.getElementById("Curr-Length").innerHTML = newLength;
 document.getElementById("Average").innerHTML = average;
-console.log(today,finaldateArray,finalNumber);
+//console.log(today,finaldateArray,finalNumber);
 </script>
 </html>
