@@ -18,6 +18,9 @@ Counter Page
 <p>Average days between dates:</p>
 <div id="Average"></div>
 <br>
+<p>Expected yearly average:</p>
+<div id="Expected"></div>
+<br>
 <p>Days from last date:</p>
 <div id="Curr-Length"></div>
 </body>
@@ -28,6 +31,7 @@ Counter Page
     Average days: 38
     2024
     19 Jan
+    16 Apr
     */
 const minute = 1000 * 60;
 const hour = minute * 60;
@@ -40,7 +44,8 @@ let dateNumberArray = [];
 let finaldateArray = [];
 
 dateArray.push("November 1, 2023");
-dateArray.push("January 19, 2024")
+dateArray.push("January 19, 2024");
+dateArray.push("April 16, 2024");
 finaldateArray.push(38);
 
 for(let i=0;i<dateArray.length;i++){
@@ -70,9 +75,11 @@ let average = Math.floor(total / finaldateArray.length);
 let finalNumberPos = dateNumberArray.length - 1;
 let finalNumber = dateNumberArray[finalNumberPos];
 let newLength = Math.floor((todayParsed - finalNumber)/day);
+let expectedAnnual = Math.round((365/average));
 
 document.getElementById("Today-Date").innerHTML = diff;
 document.getElementById("Average").innerHTML = average; //total
+document.getElementById("Expected").innerHTML = expectedAnnual;
 document.getElementById("Curr-Length").innerHTML = newLength;
 //console.log(today,finaldateArray,finalNumber);
 </script>
