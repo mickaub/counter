@@ -23,6 +23,8 @@ Counter Page
 <br>
 <p>Days from last date:</p>
 <div id="Curr-Length"></div>
+<p>Days until 6 months have passed:</p>
+<div id="Six-Months-Count"></div>
 </body>
 <script>
     /*
@@ -100,11 +102,13 @@ let finalNumberPos = dateNumberArray.length - 1;
 let finalNumber = dateNumberArray[finalNumberPos];
 let newLength = Math.floor((todayParsed - finalNumber)/day);
 let expectedAnnual = Math.round((365/average));
+let sixMonthCountdown = 180 - newLength;
 
 document.getElementById("Today-Date").innerHTML = diff;
 document.getElementById("Average").innerHTML = average; //total
 document.getElementById("Expected").innerHTML = expectedAnnual;
 document.getElementById("Curr-Length").innerHTML = newLength;
+document.getElementById("Six-Months-Count").innerHTML = sixMonthCountdown;
 //console.log(today,finaldateArray,finalNumber);
 </script>
 </html>
