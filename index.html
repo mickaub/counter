@@ -104,6 +104,10 @@ let newLength = Math.floor((todayParsed - finalNumber)/day);
 let expectedAnnual = Math.round((365/average));
 let sixMonthCountdown = 180 - newLength;
 
+if(sixMonthCountdown < 0){
+    sixMonthCountdown = 0
+}
+
 document.getElementById("Today-Date").innerHTML = diff;
 document.getElementById("Average").innerHTML = average; //total
 document.getElementById("Expected").innerHTML = expectedAnnual;
