@@ -32,20 +32,11 @@ Counter Page
     17 feb,17 May,12 June,30 Jun,4 Aug,30 Aug,19 Sep,1 Nov
     Average days: 38
     2024
-    19 Jan
-    16 Apr
-    14 May
-    8 Jun
-    13 Jun
-    23 Jul
-    25 Jul
-    16 Aug
-    29 Aug
-    7 Oct
-    29 Oct
-    12 Nov
+    19 Jan,16 Apr,14 May,8 Jun,13 Jun,23 Jul,25 Jul,16 Aug,29 Aug,7 Oct,29 Oct,12 Nov
     15 Nov (Note: M leads to more P)
     28 Nov (Nervousness before driving test led to lack of sleep and P to compensate)
+    2024 Average days: 29
+    1 Jan 2025 (Watching sexy videos slowly led to P)
     */
 const minute = 1000 * 60;
 const hour = minute * 60;
@@ -57,22 +48,8 @@ let dateArray = [];
 let dateNumberArray = [];
 let finaldateArray = [];
 
-dateArray.push("November 1, 2023");
-dateArray.push("January 19, 2024");
-dateArray.push("April 16, 2024");
-dateArray.push("May 15, 2024");
-dateArray.push("June 8, 2024");
-dateArray.push("June 13, 2024")
-dateArray.push("July 23, 2024");
-dateArray.push("July 25, 2024");
-dateArray.push("August 16, 2024");
-dateArray.push("August 29, 2024");
-dateArray.push("October 7, 2024");
-dateArray.push("October 29, 2024");
-dateArray.push("November 12, 2024");
-dateArray.push("November 15, 2024");
-dateArray.push("November 28, 2024");
-finaldateArray.push(38);
+dateArray.push("January 1, 2025");
+finaldateArray.push(29);
 
 for(let i=0;i<dateArray.length;i++){
     let a = Date.parse(dateArray[i]);    
@@ -92,7 +69,7 @@ for(let i=0;i<finaldateArray.length;i++){
 
 let todayParsed = Date.parse(today);
 
-let c = Date.parse("January 1, 2024") //dateNumberArray[0];
+let c = Date.parse("January 1, 2025") //dateNumberArray[0];
 let b =  todayParsed - c;
 let diff = Math.floor(b/day);
 
