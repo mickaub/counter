@@ -58,22 +58,9 @@ let dateArray = [];
 let dateNumberArray = [];
 let finaldateArray = [];
 
-dateArray.push("January 1, 2025");
-dateArray.push("January 9, 2025");
-dateArray.push("February 6, 2025");
-dateArray.push("March 25, 2025");
-dateArray.push("April 14, 2025");
-dateArray.push("May 3, 2025");
-dateArray.push("May 5, 2025");
-dateArray.push("May 6, 2025");
-dateArray.push("May 23, 2025");
-dateArray.push("June 7, 2025");
-dateArray.push("June 29, 2025");
-dateArray.push("July 28, 2025");
-dateArray.push("August 1, 2025");
-dateArray.push("August 22, 2025");
-dateArray.push("October 4, 2025");
-finaldateArray.push(29);
+dateArray.push("December 31, 2025");
+finaldateArray.push(19);
+//average 19
 
 for(let i=0;i<dateArray.length;i++){
     let a = Date.parse(dateArray[i]);    
@@ -93,7 +80,7 @@ for(let i=0;i<finaldateArray.length;i++){
 
 let todayParsed = Date.parse(today);
 
-let c = Date.parse("January 1, 2025") //dateNumberArray[0];
+let c = Date.parse("January 1, 2026") //dateNumberArray[0];
 let b =  todayParsed - c;
 let diff = Math.floor(b/day);
 
